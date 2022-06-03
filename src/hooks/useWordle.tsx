@@ -33,7 +33,7 @@ const useWordle = (solution: string) =>{
 
     const handleKeyup = ( e : KeyboardEvent ):void => {  //need fix
         const {turn , currentGuess , history, isCorrect} = wordle
-        if (isCorrect)
+        if (isCorrect || turn > 5) 
             return
         const key = e.key
         if (key === 'Enter'){

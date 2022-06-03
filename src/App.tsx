@@ -5,11 +5,10 @@ const App: React.FC = () =>{
   const [solution, setSolution] = useState<string>('')
 
   useEffect(() => {
-    fetch('http://localhost:3001/solutions')
+    fetch('https://random-word-api.herokuapp.com/word?length=5&lang=en')
     .then(res => res.json())
     .then(json => {
-      const random = json[Math.floor(Math.random()*json.length)]
-      setSolution(random.word)
+      setSolution(json[0])
     })
   },[setSolution])
 
